@@ -1,0 +1,52 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- faq
+- thanks
+- find_time_zone
+- find_time_zone_for_location
+- city_info
+- faq/ask_channels
+- faq/ask_umass
+entities:
+- city
+slots:
+  city:
+    type: text
+responses:
+  utter_ask_location:
+  - text: Please give me the city for which you need the timezone.
+  utter_finding_timezone:
+  - text: Finding timezone of {city}. Please wait..
+  utter_welcome:
+  - text: You're welcome!
+  utter_greet:
+  - text: Hey! I am timezone Bot!
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- action_find_time_zone
+- utter_ask_location
+- utter_finding_timezone
+- utter_welcome
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
